@@ -68,7 +68,7 @@ class _MyHomePageState extends State<MyHomePage> {
       ]),
       floatingActionButton: FloatingActionButton(
         onPressed: widget.changeDarkMode,
-        child: const Icon(Icons.light_mode),
+        child: widget.isDarkMode() ? const Icon(Icons.light_mode) : const Icon(Icons.dark_mode),
       ),
     );
   }
