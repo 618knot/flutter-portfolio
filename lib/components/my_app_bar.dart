@@ -9,7 +9,6 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
     return DefaultTabController(
         length: _contents.length,
         child: AppBar(
-          title: const Text('knot'),
           backgroundColor: Theme.of(context).colorScheme.inversePrimary,
           bottom: TabBar(
               isScrollable: true,
@@ -20,5 +19,5 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
   }
 
   @override
-  Size get preferredSize => const Size.fromHeight(kToolbarHeight + 25.0);
+  Size get preferredSize => const Size.fromHeight(kToolbarHeight);
 }
