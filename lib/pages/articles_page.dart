@@ -16,7 +16,7 @@ class ArticlesPage extends StatelessWidget {
         } else if (snapshot.hasError ||
             !snapshot.hasData ||
             snapshot.data == null) {
-          return nil;
+          return const Center(child: Text('記事を読み込めませんでした'));
         } else {
           // データが取得できた場合の表示
           var articles = snapshot.data!;
