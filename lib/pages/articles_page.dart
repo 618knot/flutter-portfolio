@@ -21,8 +21,8 @@ class ArticlesPage extends StatelessWidget {
           // データが取得できた場合の表示
           var articles = snapshot.data!;
 
-          return Center(
-            child: SingleChildScrollView(
+          return SingleChildScrollView(
+            child: Center(
               child: Column(
                 children: [
                   for (var article in articles['articles'])
