@@ -22,7 +22,9 @@ class _EventPageState extends State<EventPage> {
     return getRequest(
       url:
           'https://connpass.com/api/v1/event/?nickname=knot&owner_nickname=knot&order=2&count=100&format=json',
-    );
+    ).catchError((e) {
+      throw '$e';
+    });
   }
 
   @override
@@ -33,9 +35,7 @@ class _EventPageState extends State<EventPage> {
         if (snapshot.connectionState == ConnectionState.waiting) {
           // データがまだ取得されていない場合の表示
           return const Center(child: CircularProgressIndicator());
-        } else if (snapshot.hasError ||
-            !snapshot.hasData ||
-            snapshot.data == null) {
+        } else if (snapshot.hasError || snapshot.data == null) {
           return const Center(child: Text('イベントを読み込めませんでした'));
         } else {
           // データが取得できた場合の表示;

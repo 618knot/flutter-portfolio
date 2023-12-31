@@ -15,7 +15,11 @@ class _ArticlesPageState extends State<ArticlesPage> {
   @override
   void initState() {
     super.initState();
-    _articlesFuture = getRequest(url: 'https://zenn.dev/api/articles?username=knot&order=latest');
+    _articlesFuture = getRequest(
+            url: 'https://zenn.dev/api/articles?username=knot&order=latest')
+        .catchError((e) {
+      throw '$e';
+    });
   }
 
   @override
@@ -26,7 +30,7 @@ class _ArticlesPageState extends State<ArticlesPage> {
         if (snapshot.connectionState == ConnectionState.waiting) {
           // データがまだ取得されていない場合の表示
           return const Center(child: CircularProgressIndicator());
-        } else if (snapshot.hasError || !snapshot.hasData || snapshot.data == null) {
+        } else if (snapshot.hasError || snapshot.data == null) {
           return const Center(child: Text('記事を読み込めませんでした'));
         } else {
           // データが取得できた場合の表示
