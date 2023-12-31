@@ -10,7 +10,7 @@ class EventPage extends StatelessWidget {
     return FutureBuilder(
         future: getRequest(
             url:
-                'https://connpass.com/api/v1/event/?nickname=knot&owner_nickname=knot&order=2&format=json'),
+                'https://connpass.com/api/v1/event/?nickname=knot&owner_nickname=knot&order=2&count=100&format=json'),
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
             // データがまだ取得されていない場合の表示
