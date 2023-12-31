@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_portfolio/components/ogp_content.dart';
 import 'package:flutter_portfolio/utility/get_request.dart';
-import 'package:nil/nil.dart';
 
 class ArticlesPage extends StatelessWidget {
   const ArticlesPage({super.key});

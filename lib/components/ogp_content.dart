@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_portfolio/utility/fetch_ogp_image.dart';
 import 'package:flutter_portfolio/utility/move_to_url.dart';
-import 'package:nil/nil.dart';
 
 class OgpContent extends StatelessWidget {
   final String title;
