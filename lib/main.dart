@@ -27,7 +27,7 @@ class _MyAppState extends State<MyApp> {
       theme: ThemeData(
           colorSchemeSeed: const Color.fromARGB(255, 63, 101, 234),
           useMaterial3: true,
-          brightness: _isDarkMode ? Brightness.light : Brightness.dark),
+          brightness: _isDarkMode ? Brightness.dark : Brightness.light),
       home: MyHomePage(changeDarkMode: _changeDarkMode),
     );
   }
