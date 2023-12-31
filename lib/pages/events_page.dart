@@ -18,10 +18,13 @@ class EventPage extends StatelessWidget {
           } else if (snapshot.hasError ||
               !snapshot.hasData ||
               snapshot.data == null) {
-            return const Center(child: Text('記事を読み込めませんでした'));
+            return const Center(child: Text('イベントを読み込めませんでした'));
           } else {
             // データが取得できた場合の表示;
             var events = snapshot.data!;
+            if (!events.containsKey('events')) {
+              return const Center(child: Text('イベントデータがありません'));
+            }
 
             return SingleChildScrollView(
               child: Center(
