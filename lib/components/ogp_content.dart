@@ -17,7 +17,7 @@ Widget build(BuildContext context) {
         // データがまだ解決されていない場合の表示
         return const CircularProgressIndicator();
       } else if (snapshot.hasError || !snapshot.hasData || snapshot.data == null) {
-        return nil;
+        return const Center(child: Text('画像を読み込めませんでした'));
       } else {
         // データが解決され、かつnullでない場合の表示
         return Container(
