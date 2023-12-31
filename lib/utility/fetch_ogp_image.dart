@@ -15,6 +15,8 @@ Future<String?> fetchOGPImage(String url) async {
         final ogImageUrl = ogImageTag.attributes['content'];
         return ogImageUrl;
       }
+    } else {
+      throw 'Error fetching OGP image with status code: ${response.statusCode}';
     }
   } catch (e) {
     throw 'Error fetching OGP image: $e';
