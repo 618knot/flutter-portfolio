@@ -7,8 +7,10 @@ Future<Map<String, dynamic>> getRequest({String? url}) async {
 
   if (await canLaunchUrl(uri)) {
     var response = await http.get(uri);
-    return jsonDecode(response.body);
-  } else {
-    throw 'Could not launch $uri';
+    if(response.statusCode == 200) {
+      return jsonDecode(response.body);
+    }
   }
+  
+  throw 'Could not launch $uri';
 }
