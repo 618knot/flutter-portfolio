@@ -36,7 +36,10 @@ class _MyAppState extends State<MyApp> {
           colorSchemeSeed: const Color.fromARGB(255, 63, 101, 234),
           useMaterial3: true,
           brightness: _isDarkMode ? Brightness.dark : Brightness.light),
-      home: MyHomePage(changeDarkMode: _changeDarkMode, isDarkMode: _getIsDarkMode),
+      home: DefaultTabController(
+          length: 3,
+          child: MyHomePage(
+              changeDarkMode: _changeDarkMode, isDarkMode: _getIsDarkMode)),
     );
   }
 }
@@ -44,20 +47,28 @@ class _MyAppState extends State<MyApp> {
 class MyHomePage extends StatefulWidget {
   final VoidCallback changeDarkMode;
   final bool Function() isDarkMode;
-  const MyHomePage({Key? key, required this.changeDarkMode, required this.isDarkMode}) : super(key: key);
+  const MyHomePage(
+      {Key? key, required this.changeDarkMode, required this.isDarkMode})
+      : super(key: key);
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const MyAppBar(),
+      body: TabBarView(children: <Widget>[
+        AboutPage(isDarkMode: widget.isDarkMode),
+        const ArticlesPage(),
+        const EventPage(),
+      ]),
       floatingActionButton: FloatingActionButton(
         onPressed: widget.changeDarkMode,
-        child: const Icon(Icons.light_mode),
+        child: widget.isDarkMode() ? const Icon(Icons.light_mode) : const Icon(Icons.dark_mode),
       ),
     );
   }

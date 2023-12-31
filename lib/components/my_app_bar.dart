@@ -6,16 +6,14 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
-    return DefaultTabController(
-        length: _contents.length,
-        child: AppBar(
-          backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-          bottom: TabBar(
-              isScrollable: true,
-              tabs: _contents.map((String content) {
-                return Tab(text: content);
-              }).toList()),
-        ));
+    return AppBar(
+      backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+      bottom: TabBar(
+          isScrollable: true,
+          tabs: _contents.map((String content) {
+            return Tab(text: content);
+          }).toList()),
+    );
   }
 
   @override
