@@ -36,7 +36,7 @@ class AboutPage extends StatelessWidget {
                 // GitHubリンク
                 InkWell(
                   onTap: () {
-                    moveToUrl(host: 'github.com', path: '/618knot');
+                    moveToUrl(url: 'https://github.com/618knot');
                   },
                   child: SvgPicture.asset(
                     'images/github.svg',
@@ -50,7 +50,7 @@ class AboutPage extends StatelessWidget {
                 // Xリンク
                 InkWell(
                   onTap: () {
-                    moveToUrl(host: 'twitter.com', path: '/618knot');
+                    moveToUrl(url: 'https://twitter.com/618knot');
                   },
                   child: SvgPicture.asset(
                     'images/x.svg',
@@ -64,7 +64,7 @@ class AboutPage extends StatelessWidget {
                 // zennリンク
                 InkWell(
                   onTap: () {
-                    moveToUrl(host: 'zenn.dev', path: '/knot');
+                    moveToUrl(url: 'https://zenn.dev/knot');
                   },
                   child: SvgPicture.asset(
                     'images/zenn.svg',

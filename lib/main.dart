@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_portfolio/pages/about_page.dart';
+import 'package:flutter_portfolio/pages/articles_page.dart';
 import 'components/my_app_bar.dart';
 
 void main() {
